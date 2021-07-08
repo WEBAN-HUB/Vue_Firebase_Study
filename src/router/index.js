@@ -27,7 +27,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/xxx.vue')
   }
 ]
-]
 
 const router = new VueRouter({
   mode: 'history',
