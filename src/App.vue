@@ -7,7 +7,7 @@
       <site-sign></site-sign>
     </v-app-bar>
     <v-navigation-drawer app v-model="drawer" width="400">
-      <site-menu :items=site.menu></site-menu>
+      <site-menu :items="site.menu"></site-menu>
     </v-navigation-drawer>
     <v-main>
       <router-view/>
@@ -54,7 +54,8 @@ export default {
                 to: '/xxx'
               }
             ]
-          }],
+          }
+        ],
         title: '나의 타이틀입니다',
         footer: '푸터입니다'
       }
@@ -69,13 +70,13 @@ export default {
         const v = sn.val()
         if (!v) {
           this.$firebase.database().ref().child('site').set(this.site)
+          return
         }
         this.site = v
       }, (e) => {
         console.log(e.message)
       })
     }
-
   }
 }
 </script>

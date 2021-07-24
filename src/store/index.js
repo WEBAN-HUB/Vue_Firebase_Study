@@ -5,8 +5,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    editable: false,
-    fireUser: null
+    editable: true,
+    fireUser: null,
+    user: null
   },
   mutations: {
     setEdit (state, edit) {
@@ -14,6 +15,9 @@ export default new Vuex.Store({
     },
     setFireUser (state, fu) {
       state.fireUser = fu
+    },
+    setUser (state, user) {
+      state.user = user
     }
   },
   actions: {
